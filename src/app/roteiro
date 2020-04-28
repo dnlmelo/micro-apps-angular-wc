@@ -1,0 +1,15 @@
+- Apresentar o app master
+- Criar o app extrato
+- Criar o app pagamento
+- Criar o comp wrapper para os apps
+- add live-server
+- Subir o live-server na pasta dist
+- ng add @angular/elements --project
+- Criar o web component dos projetos
+- iniciar a navegação no app.component dos micro-apps com o router.initialNavigation()
+- Gerar os components Empty em extrato e pagamento
+- Add ngx-build-plus
+
+A segunda estratégia sem o empty component em cada app é rotear dentro do appmaster 
+- Mostrar o branch com essa estratégia funcionando
+

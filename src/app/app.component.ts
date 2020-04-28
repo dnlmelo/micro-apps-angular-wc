@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'appmaster';
+  
+  ngOnInit(){
+    const script = document.createElement('script');
+    script.src = 'http://localhost:8080/extrato/main-es2015.js';
+    document.body.appendChild(script);
+
+    const script2 = document.createElement('script');
+    script2.src = 'http://localhost:8080/pagamento/main-es2015.js';
+    document.body.appendChild(script2);
+  } 
 }

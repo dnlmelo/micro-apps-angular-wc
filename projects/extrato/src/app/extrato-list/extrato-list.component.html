@@ -1,0 +1,18 @@
+<h2>Lançamentos</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Lançamentos</th>
+            <th scope="col">Valor (R$)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let balance of extract; index as i">
+            <td>{{ balance.date }} </td>
+            <td>{{ balance.name }}</td>
+            <td [class.out]="balance.out">{{ balance.value | number : '1.2-2'}}</td>
+        </tr>
+    </tbody>
+</table>

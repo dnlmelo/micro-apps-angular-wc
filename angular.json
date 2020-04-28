@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "appmaster": {
@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +120,241 @@
           }
         }
       }
-    }},
+    },
+    "extrato": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/extrato",
+      "sourceRoot": "projects/extrato/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/extrato",
+            "index": "projects/extrato/src/index.html",
+            "main": "projects/extrato/src/main.ts",
+            "polyfills": "projects/extrato/src/polyfills.ts",
+            "tsConfig": "projects/extrato/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/extrato/src/favicon.ico",
+              "projects/extrato/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/extrato/src/styles.css"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/extrato/src/environments/environment.ts",
+                  "with": "projects/extrato/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "extrato:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "extrato:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "extrato:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/extrato/src/test.ts",
+            "polyfills": "projects/extrato/src/polyfills.ts",
+            "tsConfig": "projects/extrato/tsconfig.spec.json",
+            "karmaConfig": "projects/extrato/karma.conf.js",
+            "assets": [
+              "projects/extrato/src/favicon.ico",
+              "projects/extrato/src/assets"
+            ],
+            "styles": [
+              "projects/extrato/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/extrato/tsconfig.app.json",
+              "projects/extrato/tsconfig.spec.json",
+              "projects/extrato/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/extrato/e2e/protractor.conf.js",
+            "devServerTarget": "extrato:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "extrato:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "pagamento": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/pagamento",
+      "sourceRoot": "projects/pagamento/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "ngx-build-plus:browser",
+          "options": {
+            "outputPath": "dist/pagamento",
+            "index": "projects/pagamento/src/index.html",
+            "main": "projects/pagamento/src/main.ts",
+            "polyfills": "projects/pagamento/src/polyfills.ts",
+            "tsConfig": "projects/pagamento/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/pagamento/src/favicon.ico",
+              "projects/pagamento/src/assets"
+            ],
+            "styles": [
+              "projects/pagamento/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/pagamento/src/environments/environment.ts",
+                  "with": "projects/pagamento/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "ngx-build-plus:dev-server",
+          "options": {
+            "browserTarget": "pagamento:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pagamento:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pagamento:build"
+          }
+        },
+        "test": {
+          "builder": "ngx-build-plus:karma",
+          "options": {
+            "main": "projects/pagamento/src/test.ts",
+            "polyfills": "projects/pagamento/src/polyfills.ts",
+            "tsConfig": "projects/pagamento/tsconfig.spec.json",
+            "karmaConfig": "projects/pagamento/karma.conf.js",
+            "assets": [
+              "projects/pagamento/src/favicon.ico",
+              "projects/pagamento/src/assets"
+            ],
+            "styles": [
+              "projects/pagamento/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/pagamento/tsconfig.app.json",
+              "projects/pagamento/tsconfig.spec.json",
+              "projects/pagamento/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/pagamento/e2e/protractor.conf.js",
+            "devServerTarget": "pagamento:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pagamento:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "appmaster"
 }

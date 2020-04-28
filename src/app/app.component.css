@@ -1,0 +1,39 @@
+header{
+    padding: 20px 10px;
+    background: url('/assets/bg-header.png') no-repeat;
+    text-align: center;
+    background-size: cover;
+}
+
+header img{
+    height: 30px;
+}
+header span{
+    font-size: 33px;
+    color: white;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.links{
+    padding:20px;
+}
+
+.links a{
+    color: #072138;
+    margin-right: 20px;
+}
+
+main{
+    width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border: 1px solid #eee;
+    box-shadow: 1px 2px 4px #ccc;
+}
+
+.links{
+    width: 1000px;
+    margin:0 auto;
+}

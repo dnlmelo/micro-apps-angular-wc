@@ -1,0 +1,34 @@
+<h2>Novo pagamento</h2>
+
+<div class="form-group">
+    <label for="barcode">Código de barras</label><br>
+    <input type="text" name="barcode" class="barcode-input">
+</div>
+
+<div class="forma-pgto">
+    <p><b>Forma de pagamento</b></p>
+
+    <div class="form-group">
+        <input type="radio" name="pgto" value="d">
+        <label for="">Débito</label>
+    </div>
+
+    <div class="form-group">
+        <input type="radio" name="pgto" value="c">
+        <label for="">Crédito</label>
+    </div>
+</div>
+<div>
+    <div class="form-group date-group">
+        <label for="">Data</label>
+        <input type="text" placeholder="dd"> / <input type="text" placeholder="mm"> / <input type="text" placeholder="aa">
+    </div>
+</div>
+<hr>
+
+<div class="form-group date-group">
+    <label for="">Senha do cartão</label>
+    <input type="password">
+</div>
+
+<button class="btn-primary" [routerLink]="['/pagamento/done']"> Pagar </button>

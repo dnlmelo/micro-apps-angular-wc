@@ -1,0 +1,21 @@
+.barcode-input{
+    width: 400px;
+}
+
+.forma-pgto .form-group{
+    display: inline-block;
+    margin-right: 30px;
+}
+
+
+.forma-pgto .form-group input{
+    vertical-align: text-top;
+    margin-right: 4px
+}
+
+.date-group label{
+    margin-right: 5px;
+}
+.date-group input{
+    width: 50px;
+}
